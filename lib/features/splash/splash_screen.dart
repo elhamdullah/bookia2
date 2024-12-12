@@ -1,7 +1,9 @@
 // features/splash/splash_screen.dart
 import 'package:bookia/core/functions/newNavigation.dart';
 import 'package:bookia/core/functions/text_title.dart';
+import 'package:bookia/core/services/local_storage.dart';
 import 'package:bookia/core/utils/images.dart';
+import 'package:bookia/features/nav_bar/presentation/page/nav_bar_screen.dart';
 import 'package:bookia/features/welcome/welcome_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -19,8 +21,14 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    Future.delayed(Duration(seconds: 5),
-        () => pushWithReplacement(context, WelcomeScreen()));
+
+    String? token = AppLocalStorage.getCachedData(key: AppLocalStorage.token);
+    Future.delayed(Duration(seconds: 5), () {
+      if (token == null) {
+        return pushWithReplacement(context, WelcomeScreen());
+      }
+      return pushWithReplacement(context, NavBarWidget());
+    });
   }
 
   @override

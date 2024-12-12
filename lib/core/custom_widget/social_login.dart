@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class SocialLogin extends StatelessWidget {
-   SocialLogin({super.key,required this.image});
+  SocialLogin({super.key, required this.image});
   String image;
 
   @override

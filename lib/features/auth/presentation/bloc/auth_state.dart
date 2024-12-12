@@ -11,12 +11,25 @@ class LoginLoadingState extends AuthState {}
 
 class LoginSuccessState extends AuthState {}
 
-
 //////register
 class RegisterLoadingState extends AuthState {}
 
 class RegisterSuccessState extends AuthState {}
 
+//////send code
+class SendCodeLoadingState extends AuthState {}
+
+class SendCodeSuccessState extends AuthState {}
+
+//////OTP code
+class OtpCodeLoadingState extends AuthState {}
+
+class OtpCodeSuccessState extends AuthState {}
+
+//////New Password
+class NewPasswordLoadingState extends AuthState {}
+
+class NewPasswordSuccessState extends AuthState {}
 
 /////error
 class AuthErrorState extends AuthState {

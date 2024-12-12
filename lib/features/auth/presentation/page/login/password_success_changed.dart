@@ -22,7 +22,7 @@ class PasswordSuccessChanged extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SvgPicture.asset(AppImages.SuccessSvg),
+              SvgPicture.asset(AppImages.successSvg),
 
               /////////////////////////////////////////////////////////////title
               Gap(40),

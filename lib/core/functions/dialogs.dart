@@ -3,11 +3,17 @@
 import 'package:bookia/core/functions/text_title.dart';
 import 'package:bookia/core/utils/colos.dart';
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
 
-showErrorDialog(BuildContext context, String message) {
+enum DialogType { success, error, loading }
+
+showErrorDialog(BuildContext context, String message,
+    {DialogType type = DialogType.error}) {
   ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-      backgroundColor: Colors.red,
+      backgroundColor: type == DialogType.error
+          ? Colors.red
+          : type == DialogType.success
+              ? AppColor.primaryColor
+              : Colors.green,
       content: Text(
         message,
         style: gettitleTextStyle16(color: AppColor.whiteColor),
@@ -19,13 +25,15 @@ showLoadingDialog(BuildContext context) {
       context: context,
       // barrierDismissible: false,
       builder: (context) {
-        return Row(
+        return const Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              "loading",
-              style: gettitleTextStyle30(),
-            ),
+            CircularProgressIndicator(
+              color: AppColor.primaryColor,
+              strokeWidth: 7,
+              backgroundColor: AppColor.darkColor,
+              strokeAlign: 2,
+            )
           ],
         );
       });
