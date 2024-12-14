@@ -205,12 +205,15 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   Future<void> getSearchBooks(
       GetSearchBooksEvent event, Emitter<HomeState> emit) async {
     emit(SearchLoadingState());
-
     try {
-      await HomeRepo.getSearchBooks().then((value) {
+      await HomeRepo.getSearchBooks(event.name).then((value) {
+        print("-------------------------------------");
+
         if (value != null) {
           searchBooks =
               (value.data?.products ?? []).map((e) => e as Product).toList();
+          print(
+              "0000000000000000000000000000000000000000${searchBooks.toString()}");
 
           emit(SearchLoadedState());
         } else {

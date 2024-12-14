@@ -33,5 +33,5 @@ class AppEndPoints {
   static const String orderHistory = '/order-history';
 
   //search
-  static const String search = '/products-search?name=';
+  static const String search = '/products-search';
 }

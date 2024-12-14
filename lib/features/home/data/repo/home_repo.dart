@@ -37,10 +37,12 @@ class HomeRepo {
   }
 
   //search
-   static Future<SearchResponse?> getSearchBooks() async {
+  static Future<SearchResponse?> getSearchBooks(String book) async {
     try {
-      var response =
-          await DioProvider.get(endPoint: AppEndPoints.search);
+      var response = await DioProvider.get(
+          endPoint: AppEndPoints.search, queryParameters: {
+            "name": book
+          });
       if (response.statusCode == 200) {
         return SearchResponse.fromJson(response.data);
       } else {

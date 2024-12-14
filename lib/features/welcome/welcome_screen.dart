@@ -20,7 +20,7 @@ class WelcomeScreen extends StatelessWidget {
         children: [
           Image.asset(
             AppImages.welcome,
-            //fit: BoxFit.cover,
+            fit: BoxFit.cover,
           ),
           Center(
             child: Padding(

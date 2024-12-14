@@ -75,10 +75,24 @@ class _SendCodeScreenState extends State<SendCodeScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Pinput(
-                        defaultPinTheme: defaultPinTheme,
-                        controller: controller,
-                        length: 6,
-                      ),
+                          defaultPinTheme: defaultPinTheme,
+                          controller: controller,
+                          length: 6,
+                          validator: (value) {
+                            if (value!.isEmpty) {
+                              return 'Please enter OTP';
+                            }
+                            return null;
+                          },
+                          //pin width
+                          followingPinTheme: PinTheme(
+                            width: 53,
+                            height: 60,
+                            decoration: BoxDecoration(
+                              border: Border.all(color: AppColor.primaryColor),
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                          )),
                     ],
                   ),
                 ),
@@ -87,6 +101,7 @@ class _SendCodeScreenState extends State<SendCodeScreen> {
                 Gap(40),
                 CustomButton(
                   text: "Verify",
+                  fontsize: 25,
                   onPressed: () {
                     if (formkey.currentState!.validate()) {
                       context.read<AuthBloc>().add(

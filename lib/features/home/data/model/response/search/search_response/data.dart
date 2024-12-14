@@ -1,6 +1,8 @@
+// features/home/data/model/response/search/search_response/data.dart
+import 'package:bookia/features/home/data/model/response/get_arrivals_books_response/product.dart';
+
 import 'links.dart';
 import 'meta.dart';
-import 'product.dart';
 
 class Data {
   List<Product>? products;
