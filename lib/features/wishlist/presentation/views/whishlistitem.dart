@@ -69,7 +69,6 @@ class whishlistitem extends StatelessWidget {
                 textcolor: AppColor.whiteColor,
                 fontsize: 18,
                 height: 50,
-                
               ),
               const Gap(10),
             ],

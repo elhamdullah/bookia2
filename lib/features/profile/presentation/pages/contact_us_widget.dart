@@ -5,7 +5,6 @@ import 'package:bookia/core/functions/text_title.dart';
 import 'package:bookia/core/utils/colos.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:maps_launcher/maps_launcher.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ContactUsWidget extends StatelessWidget {
@@ -92,10 +91,7 @@ class ContactUsWidget extends StatelessWidget {
                         size: mediaQuery.height * .04,
                       ),
                       InkWell(
-                        onTap: () {
-                          MapsLauncher.launchQuery(
-                              'https://www.google.com/maps/place/Elkomy+Company+-+%D8%B4%D8%B1%D9%83%D8%A9+%D8%A7%D9%84%D9%83%D9%88%D9%85%D9%8A%E2%80%AD/@30.296927,31.743947,16z/data=!4m6!3m5!1s0x1457fd9499316035:0x43e8c580560a9107!8m2!3d30.2969266!4d31.7439468!16s%2Fg%2F11clyp56mh?hl=en&entry=ttu&g_ep=EgoyMDI0MDkyNS4wIKXMDSoASAFQAw%3D%3D');
-                        },
+                        onTap: () {},
                         child: Text(
                           "دعم فني على مدار اليوم للإجابة على اي استفسار لديك",
                           style:

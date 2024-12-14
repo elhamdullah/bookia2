@@ -39,11 +39,12 @@ class DioProvider {
     );
   }
 
-  static Future<Response> post(
-      {required String endPoint,
-      Map<String, dynamic>? data,
-      Map<String, dynamic>? queryParameters,
-      Map<String, dynamic>? headers,}) async {
+  static Future<Response> post({
+    required String endPoint,
+    Map<String, dynamic>? data,
+    Map<String, dynamic>? queryParameters,
+    Map<String, dynamic>? headers,
+  }) async {
     return await _dio.post(
       endPoint,
       queryParameters: data,

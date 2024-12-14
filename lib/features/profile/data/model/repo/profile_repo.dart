@@ -51,7 +51,7 @@ class ProfileRepo {
     }
   }
 
-   static Future<GetProfileResponse?> getOrderHistoryData() async {
+  static Future<GetProfileResponse?> getOrderHistoryData() async {
     try {
       var response = await DioProvider.get(
           endPoint: AppEndPoints.orderHistory,

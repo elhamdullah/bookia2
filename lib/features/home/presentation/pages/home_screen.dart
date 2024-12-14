@@ -9,6 +9,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
+import 'package:search_app_bar_page/search_app_bar_page.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -27,14 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
           AppImages.logoSvg,
           height: 30,
         ),
-        actions: [
-          SvgPicture.asset(AppIcons.search),
-          const Gap(16),
-          SvgPicture.asset(
-            AppIcons.notification,
-          ),
-          const Gap(12)
-        ],
+        //  actions: [SearchBar(), const Gap(12)],
       ),
       body: SingleChildScrollView(
         child: Column(

@@ -37,8 +37,17 @@ class _PopularBooksState extends State<PopularBooks> {
           current is NewArrivalsBooksLoadedState ||
           current is NewArrivalsBooksLoadingState,
       builder: (context, state) {
-        if (state is NewArrivalsBooksLoadedState) {
+        if (state is NewArrivalsBooksLoadedState ||
+            state is NewArrivalsBooksLoadedState) {
           var booksList = context.read<HomeBloc>().newArrivalBooks;
+          bool isFound() {
+            final whishlist = context.read<HomeBloc>().whishlist;
+            final isProductInWishlist =
+                whishlist.any((element) => element.id == widget.product?.id);
+
+            return isProductInWishlist;
+          }
+
           return Padding(
             padding: const EdgeInsets.all(20.0),
             child: Column(
@@ -112,14 +121,6 @@ class _PopularBooksState extends State<PopularBooks> {
                                               ),
                                             ))
                                           : const SizedBox(),
-                                      Positioned(
-                                        left: 0,
-                                        child: Icon(
-                                          Icons.favorite,
-                                          color: Colors.red,
-                                          size: 30,
-                                        ),
-                                      )
                                     ],
                                   ))),
                             ),

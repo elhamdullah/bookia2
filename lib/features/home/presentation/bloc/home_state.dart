@@ -50,6 +50,10 @@ class RemoveFromCartLoadingState extends HomeState {}
 
 class RemoveFromCartLoadedState extends HomeState {}
 
+//search
+class SearchLoadingState extends HomeState {}
+
+class SearchLoadedState extends HomeState {}
 
 //checkout
 class CheckoutLoadingState extends HomeState {}

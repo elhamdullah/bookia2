@@ -25,8 +25,8 @@ dependencies:
   pretty_dio_logger: ^1.4.0
   intl: ^0.20.1
   image_picker: ^1.1.2
-  maps_launcher: ^2.2.1
   url_launcher: ^6.3.1
+  search_app_bar_page: ^2.3.1
 
 dev_dependencies:
   flutter_test:

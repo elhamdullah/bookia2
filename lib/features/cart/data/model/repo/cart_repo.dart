@@ -34,7 +34,6 @@ class CartRepo {
         data: {
           'product_id': productId,
         },
-        
         endPoint: AppEndPoints.addToCartList,
       );
       //print(response.data);

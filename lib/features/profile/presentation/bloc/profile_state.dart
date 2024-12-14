@@ -6,7 +6,6 @@ sealed class ProfileState {}
 
 final class ProfileInitial extends ProfileState {}
 
-
 // get profile
 
 final class GetProfileLoadingState extends ProfileState {}
@@ -21,7 +20,7 @@ final class GetProfileErrorState extends ProfileState {
 
 final class UpdateProfileLoadingState extends ProfileState {}
 
-final class UpdateProfileSuccessState extends ProfileState{}
+final class UpdateProfileSuccessState extends ProfileState {}
 
 final class UpdateProfileErrorState extends ProfileState {
   final String error;

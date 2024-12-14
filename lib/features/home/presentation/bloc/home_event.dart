@@ -41,7 +41,12 @@ class RemoveFromCartEvent extends HomeEvent {
   final int productId;
   RemoveFromCartEvent({required this.productId});
 }
+//search event
+class GetSearchBooksEvent extends HomeEvent {
+  final String name;
 
+  GetSearchBooksEvent({required this.name});
+}
 class PlaceOrderEvent extends HomeEvent {
   String? name;
   String? phone;

@@ -15,7 +15,6 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     on<UpdateProfileEvent>(updateProfile);
   }
 
- 
   GetProfileResponse? profileResponse;
   // get profile
   getProfile(GetProfileEvent event, Emitter<ProfileState> emit) async {
@@ -51,4 +50,5 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
       log(e.toString());
       emit(UpdateProfileErrorState('Something went wrong'));
     }
-  }}
+  }
+}

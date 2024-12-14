@@ -21,6 +21,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     on<AddToCartEvent>(addToCartList);
     on<RemoveFromCartEvent>(removeFromCartList);
     on<PlaceOrderEvent>(placeOrder);
+    on<GetSearchBooksEvent>(getSearchBooks);
   }
 
 //getNewArrivals bloc
@@ -190,6 +191,28 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       ).then((value) {
         if (value) {
           emit(GetCartLoadedState());
+        } else {
+          emit(HomeErrorState(message: "unknown error"));
+        }
+      });
+    } on Exception catch (e) {
+      emit(HomeErrorState(message: e.toString()));
+    }
+  }
+
+  //search bloc
+  List<Product> searchBooks = [];
+  Future<void> getSearchBooks(
+      GetSearchBooksEvent event, Emitter<HomeState> emit) async {
+    emit(SearchLoadingState());
+
+    try {
+      await HomeRepo.getSearchBooks().then((value) {
+        if (value != null) {
+          searchBooks =
+              (value.data?.products ?? []).map((e) => e as Product).toList();
+
+          emit(SearchLoadedState());
         } else {
           emit(HomeErrorState(message: "unknown error"));
         }
