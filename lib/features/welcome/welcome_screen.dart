@@ -17,10 +17,12 @@ class WelcomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
+        alignment: Alignment.center,
         children: [
           Image.asset(
             AppImages.welcome,
-            fit: BoxFit.cover,
+            width: double.infinity,
+            fit: BoxFit.fill,
           ),
           Center(
             child: Padding(
